@@ -22,6 +22,17 @@ const setRandomColor = () => {
     document.body.style.backgroundColor = _setColor;
 };
 
-refs.btnStart.addEventListener('click', () => refs.intervalId = setInterval(() => setRandomColor(), 1000));
-  
-refs.btnStop.addEventListener('click', e => clearInterval(refs.intervalId));
+refs.btnStart.addEventListener('click', () => {
+    refs.btnStart.disabled = true, 
+    refs.intervalId = setInterval(() => setRandomColor(), 1000)
+});
+
+refs.btnStop.addEventListener('click', e => {
+    refs.btnStart.disabled = false,
+    clearInterval(refs.intervalId)
+});
+
+
+
+
+
